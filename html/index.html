@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <title>Police MDT</title>
+</head>
+<body>
+    <div id="mdt-container" class="hidden">
+        <div class="header">
+            <h1>MDT - Wanted System</h1>
+            <button id="close-mdt-btn">&times;</button>
+        </div>
+        <div class="content">
+            <div id="wanted-list">
+                </div>
+            <form id="create-wanted-form">
+                <h2>New Warrant</h2>
+                <input type="text" id="suspect-name" placeholder="Suspect's Full Name" required>
+                <input type="text" id="mugshot-url" placeholder="Mugshot (Image URL)">
+                <textarea id="wanted-reason" placeholder="Reason for Warrant (Crimes)" required></textarea>
+                <input type="number" id="bail-amount" placeholder="Bail Amount (optional)">
+                <hr>
+                <input type="text" id="last-location" placeholder="Last Known Location">
+                <input type="text" id="vehicle" placeholder="Associated Vehicle">
+                <textarea id="description" placeholder="Physical Description"></textarea>
+                <button type="submit" id="submit-wanted-btn">Issue Warrant</button>
+            </form>
+        </div>
+    </div>
+
+    <div id="public-wanted-container" class="hidden">
+        <h1>Active Warrants</h1>
+        <div id="public-list"></div>
+        <small>Press <span style="color: red; font-weight: 800;">BACKSPACE</span> to close the list.</small>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

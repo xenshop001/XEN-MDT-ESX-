@@ -1,0 +1,234 @@
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    overflow: hidden;
+    background: transparent;
+}
+.hidden {
+    display: none !important;
+}
+
+#mdt-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    height: 80vh;
+    background: #0f172a; /* sötétebb, modernebb háttér */
+    color: #f1f5f9;
+    border-radius: 10px;
+    border: 2px solid #3b82f6;
+    box-shadow: 0 0 60px rgba(59, 130, 246, 0.6);
+    display: flex;
+    flex-direction: column;
+}
+
+#mdt-container .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #1e293b;
+    padding: 12px 24px;
+    border-bottom: 2px solid #3b82f6;
+}
+#mdt-container .header h1 {
+    margin: 0;
+    font-size: 22px;
+    color: #3b82f6;
+}
+#close-mdt-btn {
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: #f1f5f9;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+#close-mdt-btn:hover {
+    color: #ef4444;
+}
+
+#mdt-container .content {
+    display: flex;
+    flex-grow: 1;
+    padding: 20px;
+    gap: 20px;
+    overflow: hidden;
+}
+
+#wanted-list {
+    flex-grow: 1;
+    background: #1e293b;
+    padding: 10px;
+    border-radius: 8px;
+    overflow-y: auto;
+    border: 1px solid #334155;
+}
+
+#create-wanted-form {
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    flex-shrink: 0;
+}
+#create-wanted-form h2 {
+    margin: 0 0 5px 0;
+    font-size: 20px;
+    text-align: center;
+    color: #3b82f6;
+}
+#create-wanted-form input,
+#create-wanted-form textarea {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 6px;
+    padding: 10px;
+    color: #f1f5f9;
+    font-family: inherit;
+    width: 100%;
+    box-sizing: border-box;
+    transition: border 0.2s, background 0.2s;
+}
+#create-wanted-form input:focus,
+#create-wanted-form textarea:focus {
+    border-color: #3b82f6;
+    background: #1e293b;
+    outline: none;
+}
+#create-wanted-form textarea {
+    resize: vertical;
+    min-height: 80px;
+}
+#create-wanted-form hr {
+    border-color: #334155;
+    width: 100%;
+}
+#submit-wanted-btn {
+    background: #3b82f6;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: auto;
+    transition: background 0.2s;
+}
+#submit-wanted-btn:hover {
+    background: #2563eb;
+}
+
+.wanted-record {
+    background: #0f172a;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    border-left: 5px solid #ef4444;
+    overflow: hidden;
+}
+.record-header {
+    padding: 12px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+}
+.record-header h3 {
+    margin: 0;
+}
+.status-btn {
+    background: #ef4444;
+    border: none;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 700;
+    transition: background 0.2s;
+}
+.status-btn:hover {
+    background: #b91c1c;
+}
+.record-body {
+    display: flex;
+    padding: 15px;
+    gap: 15px;
+}
+.mugshot {
+    width: 128px;
+    height: 128px;
+    object-fit: cover;
+    background: #1e293b;
+    border-radius: 10px;
+    border: 1px solid #334155;
+    flex-shrink: 0;
+}
+.record-details {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 8px 15px;
+    font-size: 14px;
+    flex-grow: 1;
+}
+.record-details dt {
+    font-weight: 700;
+    color: #94a3b8;
+}
+.record-details dd {
+    margin: 0;
+    color: #f1f5f9;
+}
+.record-details .reason {
+    grid-column: 1 / -1;
+    background: #1e293b;
+    padding: 10px;
+    border-radius: 6px;
+}
+
+#public-wanted-container {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 600px;
+    max-height: 80vh;
+    background: rgba(15, 23, 42, 0.95);
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    border-top: 4px solid #ef4444;
+    overflow-y: auto;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+}
+#public-wanted-container h1 {
+    text-align: center;
+    margin: 0 0 20px 0;
+    color: #ef4444;
+}
+.public-record {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.public-record .mugshot {
+    width: 80px;
+    height: 80px;
+}
+.public-record-info h3 {
+    margin: 0 0 5px 0;
+    color: #3b82f6;
+}
+.public-record-info p {
+    margin: 0;
+}
+#public-wanted-container small {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #94a3b8;
+}

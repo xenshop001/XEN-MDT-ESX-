@@ -1,0 +1,17 @@
+CREATE TABLE `police_wanted_records` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT,
+  `suspect_name` VARCHAR(255) NOT NULL,
+  `reason` TEXT NOT NULL,
+  `officer_name` VARCHAR(255) NOT NULL,
+  `officer_identifier` VARCHAR(60) NOT NULL,
+  `created_at` TIMESTAMP NOT NULL DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+);
+
+
+
+ALTER TABLE `police_wanted_records`
+  ADD COLUMN `mugshot_url` TEXT NULL DEFAULT NULL,
+  ADD COLUMN `status` VARCHAR(50) NOT NULL DEFAULT 'active',
+  ADD COLUMN `details` JSON NULL DEFAULT NULL,
+  ADD COLUMN `bail` INT(11) NULL DEFAULT NULL;
